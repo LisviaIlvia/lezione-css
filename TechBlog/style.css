@@ -1,0 +1,224 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+nav {
+    background-color: black;
+    color: white;
+
+    /*position: sticky;
+    top: 0px;*/
+
+    /* position: fixed;
+    width: 100%;
+    top: 0px;*/
+}
+
+nav ul {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav li {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0px 5%;
+}
+
+.intestazione {
+    min-height: 100vh;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  margin-top: 60px;*/
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 7px;
+    color: white;
+
+}
+
+.products {
+    font-size: 35px;
+    text-decoration: underline dashed;
+}
+
+footer {
+    height: 25vh;
+    background-color: black;
+    color: white;
+}
+
+.btn-custom {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+    /*Box Model appartiene a tutti i tag*/
+    padding: 20px;
+    border: 5px dashed fuchsia;
+    border-radius: 8px;
+    /*margin-left: auto; solo a sinistre e destra e si può applicare solo ad elementi con proprietà block
+    margin-right: auto;
+    display: block; i botton di default ha comportamento inlinea */
+}
+
+article {
+    /* display: inline-block; da all'elemento un comportamento in linea mantenendo le sue proprietà inalterate*/
+    width: 30%;
+    height: 70vh;
+    padding: 20px;
+    border: 1px solid black;
+    position: relative;
+}
+
+/**** Flexbox CI PERMETTE DI FAR SI CHE UN ELEMENTO HTML POSSA MUOVERE I SUOI FIGLI DIRETTI E SOLO I FIGLI DIRETTI ATTRAVERSO PROPRIETà CSS ****/
+
+.flex {
+    display: flex;
+    /*muovere orizzontalmente i figli firetti di un blex-box*/
+    /*justify-content: space-between; separa gli elementi conuno spazio uguale tra di loro ma non ai lati*/
+    /*justify-content: space-around;  mette a dx e a sx degli elementi dello spazio*/
+    justify-content: space-evenly;
+    /*mette a dx e a sx degli elementi dello spazio uguale*/
+    min-height: 70vh;
+    /*muovere verticalmente i figli diretti di un blex-box*/
+    align-items: top;
+    margin-bottom: 5%;
+}
+
+.article-flex {
+    display: flex;
+    /* INVERTE GLI ASSI: mi permette di dare una direzione ai figli diretti di un flexbox, di default flex-direction ha come valore "row" quindi li allinea uno affianco all'altro.*/
+    flex-direction: column;
+    align-items: center;
+    /*quindi adesso la proprietà justify-content muovere gli elementi verticalmente e non piu orizzontalmente e align-items orizzontalmente */
+    justify-content: space-between;
+}
+
+/* Position */
+/* Static (default)   Fixed    Sticky    Relative    Absolut per poterle applicare il padre non deve avere static*/
+/* Absolute e Relative staccano gli elementi da tutto il resto  */
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+    position: relative;
+    left: 200px;
+
+}
+
+.mini-box {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
+/* Media Queries */
+/* Sono Keywords */
+/* Se ho iniziato a scrivere Css pensando a schermi grandi allora penserò alle media queries per schermi piccoli */
+/*le midia queries sempre alla fine*/
+
+@media screen and (max-width: 900px) {
+    .intestazione {
+        min-height: 70vh;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+}
+
+/* per ogni schermo che arriva massimo a questa larghezza 600px fai questo: */
+@media screen and (max-width: 600px) {
+
+    .intestazione {
+        min-height: 30vh;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .products {
+        font-size: 20px;
+    }
+
+    article {
+        width: 100%;
+        height: 50%;
+        padding: 0px;
+        border: 0px;
+        align-items: center;
+        margin-bottom: 5%;
+        border-bottom: 1px solid black;
+
+    }
+
+    button {
+        margin-bottom: 5%;
+    }
+
+    article p {
+        font-size: 10px;
+        width: 60%;
+    }
+
+    .flex {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    img {
+        width: 50%;
+    }
+
+
+
+}
+
+
+
+/*Se invece sono partita da schermi piccoli faccio l'inverso 
+@media screen and (min-width: 1000px){
+
+    .intestazione{
+        min-height: 100vh;
+    }
+
+}*/
